@@ -36,10 +36,10 @@ def predict_image():
         img_array = np.array(img)
         predicted_class,predictions = predict(model,img_array)
         response = {"predicted_class": f"{predicted_class}" ,"early": f"{predictions[0]:.2f}%","late": f"{predictions[1]:.2f}%","healthy": f"{predictions[2]:.2f}%"}
-        img.save(os.path.join('uploads',filename))
+        #img.save(os.path.join('uploads',filename))
         print(response)
         print(f"Predictions : {predictions}")
-        return render_template('result.html',result=response,image_path=f'uploads/{filename}')
+        return render_template('result.html',result=response)#,image_path=f'uploads/{filename}')
 
 @app.route('/uploads/<path:filename>')
 def serve_uploaded_file(filename):
