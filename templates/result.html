@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Potato Disease Prediction Result</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class="min-h-screen flex flex-col justify-center items-center">
+      <div class="flex flex-col md:flex-row max-w-2xl mx-auto">
+        <div class="bg-gray-800 shadow-md rounded-md p-4 md:p-8 mr-0 md:mr-8 max-w-md">
+          <h1 class="text-2xl md:text-4xl text-center mb-4 md:mb-8">Potato Disease Prediction Result</h1>
+          <img src="{{ image_path }}" alt="User Uploaded Image" class="mx-auto md:mx-0 md:w-1/2 lg:w-full md:h-auto">
+        </div>
+        <div class="bg-gray-800 shadow-md rounded-md p-4 md:p-8 flex-1">
+          <div class="space-y-4 md:space-y-6">
+            <div class="flex items-center bg-gray-700 p-4 rounded-md">
+              <i class="fas fa-check-circle text-green-500 mr-4 text-lg"></i>
+              <div>
+                <p class="font-bold">Predicted Class:</p>
+                <p class="text-lg">{{ result.predicted_class }}</p>
+              </div>
+            </div>
+            <div class="flex items-center bg-gray-700 p-4 rounded-md">
+              <i class="fas fa-check-circle text-green-500 mr-4 text-lg"></i>
+              <div>
+                <p class="font-bold">Early Confidence:</p>
+                <p class="text-lg">{{ result.early }}</p>
+              </div>
+            </div>
+            <div class="flex items-center bg-gray-700 p-4 rounded-md">
+              <i class="fas fa-check-circle text-green-500 mr-4 text-lg"></i>
+              <div>
+                <p class="font-bold">Late Confidence:</p>
+                <p class="text-lg">{{ result.late }}</p>
+              </div>
+            </div>
+            <div class="flex items-center bg-gray-700 p-4 rounded-md">
+              <i class="fas fa-check-circle text-green-500 mr-4 text-lg"></i>
+              <div>
+                <p class="font-bold">Healthy Confidence:</p>
+                <p class="text-lg">{{ result.healthy }}</p>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="mt-4 md:mt-6 transition duration-300 ease-in-out block w-full md:w-auto px-4 py-2 bg-indigo-500 border border-transparent rounded-md font-semibold text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-gray-800">
+            <a href="/" class="block w-full h-full text-white">Predict another image</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+body {
+  @apply bg-gray-100;
+}
+
+h1 {
+  @apply text-4xl text-center text-gray-800 mb-8;
+}
+
+form {
+  @apply max-w-md mx-auto p-8 bg-white shadow-md rounded-md;
+}
+
+label {
+  @apply block text-gray-700 font-bold mb-2;
+}
+
+input[type="file"] {
+  @apply block w-full px-3 py-2 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+}
+
+button[type="submit"] {
+  @apply mt-4 block w-full px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-white;
+}
+
+.text-primary {
+  @apply text-indigo-600;
+}
+
+.bg-primary {
+  @apply bg-indigo-600;
+}
+
+.border-primary {
+  @apply border-indigo-600;
+}
